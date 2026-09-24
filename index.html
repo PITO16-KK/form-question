@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pendataan Kebutuhan Sistem Klinik Terapi Anak</title>
+  
+  <!-- SEO & Meta -->
+  <meta name="description" content="Form Pendataan Kebutuhan Sistem Klinik Terapi Anak - Cyber Coral Grey Theme">
+  <meta name="theme-color" content="#0A0C10">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- App Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Fixed Top Header & Progress Bar -->
+  <header class="header-container">
+    <div class="brand-wrapper">
+      <div class="brand-logo">
+        <div class="brand-icon">
+          <i class="fa-solid fa-child-reaching"></i>
+        </div>
+        <div>
+          <div class="brand-title">Klinik Terapi Anak</div>
+          <div class="brand-subtitle">SURVEY KEBUTUHAN SISTEM</div>
+        </div>
+      </div>
+      <button type="button" class="settings-btn" id="openSettingsBtn" title="Pengaturan Endpoint">
+        <i class="fa-solid fa-gear"></i>
+      </button>
+    </div>
+    
+    <div class="progress-container">
+      <div class="progress-header">
+        <span id="stepProgressText">Langkah 1 dari 12</span>
+        <span id="stepPercentText">8% Selesai</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Form Content -->
+  <main class="main-wrapper">
+
+    <!-- Step Navigator Chips -->
+    <div class="step-pills-container" id="stepPillsContainer">
+      <!-- Generated dynamically by JS -->
+    </div>
+
+    <form id="clinicSurveyForm" autocomplete="off">
+
+      <!-- STEP 0: DATA IDENTITAS RESPONDEN (Wajib Di Awal) -->
+      <section class="step-section active" data-step="1">
+        <div class="intro-card">
+          <h2><i class="fa-solid fa-clipboard-user" style="color:var(--coral-red)"></i> Selamat Datang!</h2>
+          <p>
+            Izin saya melakukan pendataan kebutuhan sistem terlebih dahulu supaya sistem yang nanti dibuat bisa benar-benar sesuai dengan alur kerja di tempat terapi Anda 🙏
+          </p>
+        </div>
+
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-id-card"></i> Data Responden</div>
+          <h1 class="section-title">Identitas Klinik & Responden</h1>
+          <p class="section-desc">Mohon isi data diri Anda sebelum mulai menjawab pertanyaan kebutuhan sistem.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Wajib Diisi *</div>
+          <label class="question-text" for="nama_pengisi">1. Nama Lengkap Pengisi Form</label>
+          <input type="text" id="nama_pengisi" name="nama_pengisi" class="form-input" placeholder="Masukkan nama Anda..." required>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Wajib Diisi *</div>
+          <label class="question-text" for="nama_klinik">2. Nama Tempat Terapi / Klinik</label>
+          <input type="text" id="nama_klinik" name="nama_klinik" class="form-input" placeholder="Contoh: Klinik Terapi Anak Tumbuh Cerdas" required>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Wajib Diisi *</div>
+          <label class="question-text" for="peran_responden">3. Jabatan / Peran di Klinik</label>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="peran_responden" value="Owner / Pimpinan Klinik" required>
+              <span class="option-label">Owner / Pimpinan Klinik</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="peran_responden" value="Admin Klinik / Front Office">
+              <span class="option-label">Admin Klinik / Front Office</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="peran_responden" value="Terapis / Dokter / Psikolog">
+              <span class="option-label">Terapis / Dokter / Psikolog</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="peran_responden" value="Lainnya">
+              <span class="option-label">Lainnya</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Kontak Konfirmasi *</div>
+          <label class="question-text" for="nomor_wa">4. Nomor WhatsApp / Email Konfirmasi</label>
+          <input type="tel" id="nomor_wa" name="nomor_wa" class="form-input" placeholder="Contoh: 081234567890 / email@klinik.com" required>
+        </div>
+      </section>
+
+      <!-- STEP 1: DATA PASIEN / ANAK -->
+      <section class="step-section" data-step="2">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-child"></i> Bagian 1</div>
+          <h2 class="section-title">Data Pasien / Anak</h2>
+          <p class="section-desc">Mencakup pendaftaran awal anak dan pengelolaan dokumen medis.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 1</div>
+          <div class="question-text">Data apa saja yang perlu dicatat saat anak pertama kali mendaftar?</div>
+          <div class="question-subtext">Pilih semua data yang relevan:</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q1_data_pendaftaran" value="Nama Anak">
+              <span class="option-label">Nama Lengkap Anak</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q1_data_pendaftaran" value="Tanggal Lahir">
+              <span class="option-label">Tanggal Lahir / Usia</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q1_data_pendaftaran" value="Jenis Kelamin">
+              <span class="option-label">Jenis Kelamin</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q1_data_pendaftaran" value="Alamat Rumah">
+              <span class="option-label">Alamat Rumah</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q1_data_pendaftaran" value="Data Orang Tua/Wali">
+              <span class="option-label">Data Orang Tua / Wali (Ayah/Ibu)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q1_data_pendaftaran" value="Nomor WhatsApp Utama">
+              <span class="option-label">Nomor WhatsApp Aktif</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q1_data_pendaftaran" value="Riwayat Penyakit / Keluhan Utama">
+              <span class="option-label">Riwayat Medis / Keluhan Utama</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q1_data_pendaftaran" value="Sekolah / TK">
+              <span class="option-label">Nama Sekolah / TK</span>
+            </label>
+          </div>
+          <div class="other-input-wrap">
+            <input type="text" name="q1_data_pendaftaran_other" class="form-input" placeholder="Data tambahan lainnya (opsional)...">
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 2</div>
+          <div class="question-text">Apakah satu anak bisa memiliki lebih dari satu orang tua/wali yang terdaftar?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q2_multi_orangtua" value="Ya, bisa mendaftarkan Ayah & Ibu secara terpisah">
+              <span class="option-label">Ya, bisa mendaftarkan Ayah & Ibu (kontak terpisah)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q2_multi_orangtua" value="Tidak, cukup 1 kontak wali utama">
+              <span class="option-label">Tidak, cukup 1 kontak wali utama saja</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q2_multi_orangtua" value="Opsional / Tergantung kebutuhan pasien">
+              <span class="option-label">Opsional / Fleksibel</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 3</div>
+          <div class="question-text">Apakah perlu menyimpan riwayat atau dokumen pasien?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q3_dokumen_pasien" value="Hasil Assessment">
+              <span class="option-label">Hasil Assessment Awal</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q3_dokumen_pasien" value="Diagnosis Dokter/Psikolog">
+              <span class="option-label">Diagnosis Medis / Psikolog</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q3_dokumen_pasien" value="Surat Rujukan">
+              <span class="option-label">Surat Rujukan RS/Dokter</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q3_dokumen_pasien" value="Hasil Pemeriksaan Laboratorium/Lab">
+              <span class="option-label">Hasil Pemeriksaan Penunjang (EEG, Lab, dll)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q3_dokumen_pasien" value="Dokumentasi Foto / Video Perkembangan">
+              <span class="option-label">Foto / Video Dokumentasi Sesi</span>
+            </label>
+          </div>
+          <div class="other-input-wrap">
+            <input type="text" name="q3_dokumen_pasien_other" class="form-input" placeholder="Dokumen lain yang ingin disimpan...">
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 4</div>
+          <div class="question-text">Apakah data pasien perlu memiliki nomor/ID pasien otomatis?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q4_id_otomatis" value="Ya, ID Otomatis (Contoh: KL-2026-001)">
+              <span class="option-label">Ya, ID Otomatis (Format: KL-2026-001)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q4_id_otomatis" value="Manual (Diisi sendiri oleh admin)">
+              <span class="option-label">Manual (Diisi sendiri oleh admin)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q4_id_otomatis" value="Tidak perlu ID khusus">
+              <span class="option-label">Tidak perlu ID khusus</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 2: ASSESSMENT ANAK -->
+      <section class="step-section" data-step="3">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-stethoscope"></i> Bagian 2</div>
+          <h2 class="section-title">Assessment Anak</h2>
+          <p class="section-desc">Proses evaluasi awal perkembangan anak sebelum terapi.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 5</div>
+          <div class="question-text">Apakah sebelum mengikuti terapi anak harus melalui proses assessment terlebih dahulu?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q5_wajib_assessment" value="Ya, wajib assessment dulu">
+              <span class="option-label">Ya, wajib assessment sebelum mulai terapi</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q5_wajib_assessment" value="Tidak, bisa langsung memilih sesi terapi">
+              <span class="option-label">Tidak, bisa langsung terapi tanpa assessment</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q5_wajib_assessment" value="Tergantung kondisi anak / Rujukan dokter">
+              <span class="option-label">Tergantung kondisi anak / rujukan</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 6</div>
+          <div class="question-text">Siapa yang melakukan proses assessment di klinik Kakak?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q6_pelaksana_assessment" value="Dokter Spesialis (Sp.A / KFR)">
+              <span class="option-label">Dokter Spesialis (Sp.A / KFR)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q6_pelaksana_assessment" value="Psikolog Anak">
+              <span class="option-label">Psikolog Anak</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q6_pelaksana_assessment" value="Terapis Senior / Kepala Terapis">
+              <span class="option-label">Terapis Senior / Koordinator</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q6_pelaksana_assessment" value="Tim Multidisiplin (Dokter + Terapis)">
+              <span class="option-label">Tim Multidisiplin (Kolaborasi)</span>
+            </label>
+          </div>
+          <div class="other-input-wrap">
+            <input type="text" name="q6_pelaksana_assessment_other" class="form-input" placeholder="Pihak lainnya...">
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 7</div>
+          <div class="question-text">Apa saja yang perlu dicatat dalam hasil assessment?</div>
+          <textarea name="q7_isi_assessment" class="form-textarea" placeholder="Contoh: Keluhan utama, riwayat tumbuh kembang, observasi perilaku, diagnosis sementara, rekomendasi terapi..."></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 8</div>
+          <div class="question-text">Apakah hasil assessment perlu dapat dicetak atau dibuat menjadi laporan untuk orang tua?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q8_laporan_assessment" value="Ya, harus bisa dicetak PDF / Print fisik">
+              <span class="option-label">Ya, harus bisa cetak PDF / Print fisik</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q8_laporan_assessment" value="Ya, laporan digital di app / kirim WA">
+              <span class="option-label">Ya, bentuk digital (App / Kirim WA)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q8_laporan_assessment" value="Hanya untuk catatan internal klinik">
+              <span class="option-label">Hanya untuk catatan internal klinik</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 3: JENIS TERAPI -->
+      <section class="step-section" data-step="4">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-shapes"></i> Bagian 3</div>
+          <h2 class="section-title">Jenis Terapi</h2>
+          <p class="section-desc">Layanan terapi yang ditawarkan dan pemantauan target.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 9</div>
+          <div class="question-text">Jenis terapi apa saja yang tersedia di tempat Kakak saat ini?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q9_jenis_terapi" value="Terapi Wicara (TW)">
+              <span class="option-label">Terapi Wicara (TW)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q9_jenis_terapi" value="Terapi Okupasi (TO)">
+              <span class="option-label">Terapi Okupasi (TO)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q9_jenis_terapi" value="Sensori Integrasi (SI)">
+              <span class="option-label">Sensori Integrasi (SI)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q9_jenis_terapi" value="Fisioterapi (FT)">
+              <span class="option-label">Fisioterapi (FT)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q9_jenis_terapi" value="ABA / Perilaku">
+              <span class="option-label">ABA / Terapi Perilaku</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q9_jenis_terapi" value="Konsultasi Psikologi / Dokter">
+              <span class="option-label">Konsultasi Dokter / Psikolog</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q9_jenis_terapi" value="Remedial Teaching / Terapi Pedagogik">
+              <span class="option-label">Remedial Teaching / Edukasi Khusus</span>
+            </label>
+          </div>
+          <div class="other-input-wrap">
+            <input type="text" name="q9_jenis_terapi_other" class="form-input" placeholder="Layanan terapi lainnya...">
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 10</div>
+          <div class="question-text">Apakah satu anak bisa mengikuti lebih dari satu jenis terapi?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q10_multi_terapi" value="Ya, bisa ambil beberapa jenis terapi bersamaan">
+              <span class="option-label">Ya, bisa ambil beberapa jenis terapi sekaligus</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q10_multi_terapi" value="Tidak, hanya 1 jenis terapi dalam satu periode">
+              <span class="option-label">Tidak, 1 jenis terapi per periode</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 11</div>
+          <div class="question-text">Apakah setiap jenis terapi memiliki program/target yang berbeda untuk setiap anak?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q11_target_per_anak" value="Ya, individualized program (target khusus tiap anak)">
+              <span class="option-label">Ya, target khusus disesuaikan individu (IEP)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q11_target_per_anak" value="Program umum / disamakan per kelompok usia">
+              <span class="option-label">Program umum / disamakan per kelompok</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 12</div>
+          <div class="question-text">Apakah target perkembangan anak perlu dicatat dan dipantau dari sesi ke sesi?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q12_pantau_tiap_sesi" value="Ya, dipantau dan di-score setiap sesi">
+              <span class="option-label">Ya, dicatat dan di-score tiap sesi terapi</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q12_pantau_tiap_sesi" value="Cukup evaluasi periodik (misal tiap 10 sesi / bulanan)">
+              <span class="option-label">Cukup evaluasi periodik (tiap 10 sesi / bulanan)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q12_pantau_tiap_sesi" value="Tidak perlu skoring ketat">
+              <span class="option-label">Tidak perlu skoring ketat</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 4: TERAPIS & JADWAL -->
+      <section class="step-section" data-step="5">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-calendar-days"></i> Bagian 4</div>
+          <h2 class="section-title">Terapis & Penjadwalan</h2>
+          <p class="section-desc">Pengaturan pengguna sistem, shift terapis, dan pencegahan bentrok jadwal.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 13</div>
+          <div class="question-text">Siapa saja yang nantinya akan menggunakan sistem ini?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q13_pengguna_sistem" value="Owner / Pimpinan">
+              <span class="option-label">Owner / Pimpinan Klinik</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q13_pengguna_sistem" value="Admin Front Office">
+              <span class="option-label">Admin / Front Office</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q13_pengguna_sistem" value="Terapis">
+              <span class="option-label">Terapis</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q13_pengguna_sistem" value="Kasir / Keuangan">
+              <span class="option-label">Kasir / Keuangan</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q13_pengguna_sistem" value="Dokter / Psikolog">
+              <span class="option-label">Dokter / Psikolog</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q13_pengguna_sistem" value="Orang Tua / Pasien (Portal Khusus)">
+              <span class="option-label">Orang Tua Pasien (Portal Khusus)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 14</div>
+          <div class="question-text">Apakah setiap pengguna memiliki hak akses menu yang berbeda?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q14_akses_berbeda" value="Ya, menu terpisah sesuai role (Admin, Terapis, Kasir)">
+              <span class="option-label">Ya, menu terpisah tegas sesuai role</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q14_akses_berbeda" value="Tidak, semua staff bisa akses semua menu">
+              <span class="option-label">Tidak, semua staff akses menu yang sama</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 15</div>
+          <div class="question-text">Bagaimana proses penjadwalan terapi yang saat ini berjalan di klinik?</div>
+          <textarea name="q15_proses_jadwal_saat_ini" class="form-textarea" placeholder="Jelaskan singkat (misal: ditulis di buku/Excel, difoto lalu dikirim ke grup WA terapis)..."></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 16</div>
+          <div class="question-text">Apakah jadwal terapi dilakukan secara rutin atau dibuat satu per satu?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q16_pola_jadwal" value="Jadwal Rutin Mingguan (Contoh: Tiap Senin & Rabu jam 09.00)">
+              <span class="option-label">Jadwal Rutin Mingguan (misal: Senin & Rabu 09.00)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q16_pola_jadwal" value="Dibuat manual per sesi setiap kedatangan">
+              <span class="option-label">Fleksibel / dibuat per sesi kedatangan</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q16_pola_jadwal" value="Bisa gabungan keduanya (Rutin + Per Sesi)">
+              <span class="option-label">Kombinasi (Rutin + Per Sesi)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 17</div>
+          <div class="question-text">Apakah sistem perlu mencegah bentrok jadwal (double booking) terapis?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q17_prevent_double_booking" value="Ya, kunci otomatis agar terapis tidak bentrok">
+              <span class="option-label">Ya, kunci otomatis jika jam terapis bentrok</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q17_prevent_double_booking" value="Beri peringatan saja tapi tetap boleh disimpan">
+              <span class="option-label">Peringatan saja (tetap boleh diisi)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q17_prevent_double_booking" value="Tidak perlu pencegahan">
+              <span class="option-label">Tidak perlu pencegahan</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 18</div>
+          <div class="question-text">Apakah ada ruangan terapi yang juga perlu dijadwalkan agar tidak bentrok?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q18_jadwal_ruangan" value="Ya, ruangan perlu dijadwalkan (Ruang SI, Ruang TW, dll)">
+              <span class="option-label">Ya, jadwalkan ruangan juga (Ruang SI, TW, dll)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q18_jadwal_ruangan" value="Tidak, penggunaan ruangan bebas">
+              <span class="option-label">Tidak, penggunaan ruangan bebas</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 19</div>
+          <div class="question-text">Apakah terapis memiliki jadwal kerja / shift tertentu?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q19_shift_terapis" value="Ya, terapis punya jam/hari kerja shift tertentu">
+              <span class="option-label">Ya, ada jam shift / hari kerja terapis</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q19_shift_terapis" value="Tidak, jam kerja terapis fleksibel mengikuti jadwal anak">
+              <span class="option-label">Fleksibel / Mengikuti jadwal anak</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 5: REKAM TERAPI / SOAP -->
+      <section class="step-section" data-step="6">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-file-medical"></i> Bagian 5</div>
+          <h2 class="section-title">Rekam Terapi / SOAP</h2>
+          <p class="section-desc">Pencatatan laporan hasil sesi terapi dan komunikasi ke orang tua.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 20</div>
+          <div class="question-text">Setelah melakukan terapi, apakah terapis perlu mengisi laporan hasil sesi?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q20_laporan_sesi" value="Ya, wajib diisi setiap kali selesai sesi">
+              <span class="option-label">Ya, wajib isi laporan tiap selesai sesi</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q20_laporan_sesi" value="Tidak wajib / hanya presensi hadir saja">
+              <span class="option-label">Tidak wajib / cukup absensi hadir</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 21</div>
+          <div class="question-text">Apakah format yang digunakan adalah SOAP (Subjective, Objective, Assessment, Plan)?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q21_format_soap" value="Ya, persis format SOAP">
+              <span class="option-label">Ya, persis standar SOAP</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q21_format_soap" value="Tidak, klinik memiliki format laporan sendiri">
+              <span class="option-label">Tidak, klinik punya format tersendiri</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q21_format_soap" value="Format bebas / catatan narasi pendek">
+              <span class="option-label">Catatan narasi bebas</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 22</div>
+          <div class="question-text">Selain SOAP, apakah ada data lain yang perlu dicatat di tiap sesi?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q22_detail_laporan_sesi" value="Aktivitas yang dilakukan">
+              <span class="option-label">Daftar Aktivitas / Mainan yang Digunakan</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q22_detail_laporan_sesi" value="Target terapi & capaian">
+              <span class="option-label">Capaian Target Terapi (Tercapai / Belum)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q22_detail_laporan_sesi" value="Catatan khusus untuk orang tua">
+              <span class="option-label">Catatan / Pesan Khusus Orang Tua</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q22_detail_laporan_sesi" value="Upload Dokumentasi Foto/Video">
+              <span class="option-label">Upload foto/video sesi</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q22_detail_laporan_sesi" value="Rekomendasi Latihan di Rumah (PR)">
+              <span class="option-label">Rekomendasi Latihan di Rumah (PR)</span>
+            </label>
+          </div>
+          <div class="other-input-wrap">
+            <input type="text" name="q22_detail_laporan_sesi_other" class="form-input" placeholder="Pencatatan lainnya...">
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 23</div>
+          <div class="question-text">Apakah orang tua perlu bisa melihat hasil atau laporan terapi anak?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q23_laporan_orangtua" value="Ya, bisa diakses orang tua (via WA PDF / Link Portal)">
+              <span class="option-label">Ya, bisa dilihat orang tua (Kirim WA / Portal)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q23_laporan_orangtua" value="Tidak, laporan hanya untuk rekam medis internal klinik">
+              <span class="option-label">Tidak, rekam medis rahasia internal klinik</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 6: PAKET TERAPI -->
+      <section class="step-section" data-step="7">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-box-archive"></i> Bagian 6</div>
+          <h2 class="section-title">Paket Terapi</h2>
+          <p class="section-desc">Pengelolaan kuota sesi, bundel paket, dan masa berlaku.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 24</div>
+          <div class="question-text">Apakah tempat terapi menyediakan sistem paket (contoh: Paket Wicara 10x Sesi)?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q24_ada_paket" value="Ya, menyediakan sistem paket sesi">
+              <span class="option-label">Ya, ada sistem paket sesi</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q24_ada_paket" value="Tidak, bayar per kedatangan / per sesi">
+              <span class="option-label">Tidak, hanya bayar eceran per sesi</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q24_ada_paket" value="Sistem Bulanan / Biaya Flat SPP">
+              <span class="option-label">Sistem SPP Bulanan (Flat Fee)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 25</div>
+          <div class="question-text">Jika menggunakan paket, apakah kuota sesi otomatis berkurang setiap selesai terapi?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q25_potong_kuota_otomatis" value="Ya, otomatis berkurang saat terapis mengisi presensi/laporan">
+              <span class="option-label">Ya, otomatis terpotong saat presensi</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q25_potong_kuota_otomatis" value="Dikurangi manual oleh kasir/admin">
+              <span class="option-label">Dikurangi manual oleh admin/kasir</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 26</div>
+          <div class="question-text">Apakah paket terapi memiliki masa berlaku (expired date)?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q26_paket_expired" value="Ya, ada masa berlaku (misal: 1 bulan / 3 bulan)">
+              <span class="option-label">Ya, ada masa berlaku (misal: 30 / 60 hari)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q26_paket_expired" value="Tidak, paket berlaku selamanya sampai kuota habis">
+              <span class="option-label">Tidak, berlaku selamanya sampai habis</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 27</div>
+          <div class="question-text">Apakah ada berbagai variasi paket, harga, dan jumlah sesi yang berbeda-beda?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q27_variasi_paket" value="Ya, banyak variasi paket (Paket Hemat 4x, 8x, 12x, Paket Kombinasi)">
+              <span class="option-label">Ya, bervariasi (misal Paket 4x, 8x, 12x sesi)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q27_variasi_paket" value="Paket standar seragam">
+              <span class="option-label">Paket standar seragam</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 28</div>
+          <div class="question-text">Apakah satu anak bisa memiliki beberapa paket terapi aktif sekaligus?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q28_multi_paket_anak" value="Ya, misal punya 1 Paket Wicara + 1 Paket Okupasi sekaligus">
+              <span class="option-label">Ya, bisa beli >1 paket sekaligus</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q28_multi_paket_anak" value="Tidak, hanya 1 paket aktif per anak">
+              <span class="option-label">Tidak, hanya 1 paket aktif</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 7: PEMBAYARAN / KASIR -->
+      <section class="step-section" data-step="8">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-cash-register"></i> Bagian 7</div>
+          <h2 class="section-title">Pembayaran & Kasir</h2>
+          <p class="section-desc">Pencatatan transaksi, kwitansi, dan opsi pembayaran.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 29</div>
+          <div class="question-text">Apakah sistem perlu memiliki fitur kasir / Point of Sale (POS)?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q29_fitur_kasir" value="Ya, sangat butuh modul kasir lengkap">
+              <span class="option-label">Ya, sangat butuh modul kasir/POS</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q29_fitur_kasir" value="Cukup pencatatan sederhana">
+              <span class="option-label">Cukup pencatatan sederhana</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q29_fitur_kasir" value="Tidak perlu kasir di sistem">
+              <span class="option-label">Tidak perlu kasir di sistem</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 30</div>
+          <div class="question-text">Transaksi apa saja yang perlu dicatat di sistem?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q30_jenis_transaksi" value="Biaya Assessment Awal">
+              <span class="option-label">Biaya Assessment Awal</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q30_jenis_transaksi" value="Terapi Per Sesi (Eceran)">
+              <span class="option-label">Terapi Per Sesi (Eceran)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q30_jenis_transaksi" value="Pembelian Paket Terapi">
+              <span class="option-label">Pembelian Paket Terapi</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q30_jenis_transaksi" value="Biaya Konsultasi Dokter/Psikolog">
+              <span class="option-label">Biaya Konsultasi Dokter/Psikolog</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q30_jenis_transaksi" value="Penjualan Produk/Barang Media Terapi">
+              <span class="option-label">Penjualan Produk / Barang Media Terapi</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q30_jenis_transaksi" value="Biaya Admin Pendaftaran">
+              <span class="option-label">Biaya Registration / Admin</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 31</div>
+          <div class="question-text">Metode pembayaran apa saja yang digunakan di klinik?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q31_metode_bayar" value="Cash / Tunai">
+              <span class="option-label">Cash / Tunai</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q31_metode_bayar" value="Transfer Bank">
+              <span class="option-label">Transfer Bank</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q31_metode_bayar" value="QRIS">
+              <span class="option-label">QRIS</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q31_metode_bayar" value="Debit / Kredit Card">
+              <span class="option-label">Kartu Debit / Kredit (EDC)</span>
+            </label>
+          </div>
+          <div class="other-input-wrap">
+            <input type="text" name="q31_metode_bayar_other" class="form-input" placeholder="Metode lain (e-wallet, dll)...">
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 32</div>
+          <div class="question-text">Apakah sistem perlu membuat invoice / kwitansi otomatis?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q32_kwitansi_otomatis" value="Ya, cetak PDF / Struk Thermal / Kirim WA Kwitansi">
+              <span class="option-label">Ya, buat PDF / Struk / Kwitansi WA</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q32_kwitansi_otomatis" value="Tidak, kwitansi masih tulis tangan manual">
+              <span class="option-label">Tidak, kwitansi tulis tangan manual</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 33</div>
+          <div class="question-text">Apakah perlu mencatat pembayaran yang belum lunas / piutang (DP)?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q33_catat_piutang" value="Ya, catat status Pembayaran DP / Belum Lunas">
+              <span class="option-label">Ya, catat status DP / Piutang / Belum Lunas</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q33_catat_piutang" value="Tidak, semua transaksi wajib lunas di awal">
+              <span class="option-label">Tidak, wajib lunas langsung</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 34</div>
+          <div class="question-text">Apakah perlu fitur diskon atau promo pembayaran?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q34_fitur_diskon" value="Ya, ada diskon nominal / persentase / kode promo">
+              <span class="option-label">Ya, ada diskon nominal/persen</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q34_fitur_diskon" value="Tidak ada diskon">
+              <span class="option-label">Tidak ada diskon</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 8: LAPORAN -->
+      <section class="step-section" data-step="9">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-chart-line"></i> Bagian 8</div>
+          <h2 class="section-title">Laporan Management</h2>
+          <p class="section-desc">Kebutuhan rekapan data untuk owner dan ekspor file.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 35</div>
+          <div class="question-text">Laporan apa saja yang dibutuhkan oleh owner/pimpinan klinik?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q35_jenis_laporan" value="Laporan Jumlah Pasien & Pasien Baru">
+              <span class="option-label">Laporan Pasien (Total & Pasien Baru)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q35_jenis_laporan" value="Laporan Rekam Terapi / Kehadiran Sesi">
+              <span class="option-label">Laporan Sesi Terapi & Kehadiran</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q35_jenis_laporan" value="Laporan Pendapatan & Omset Klinik">
+              <span class="option-label">Laporan Keuangan & Pendapatan Omset</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q35_jenis_laporan" value="Laporan Penggunaan Kuota Paket">
+              <span class="option-label">Laporan Penggunaan Paket Terapi</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q35_jenis_laporan" value="Laporan Fee / Komisi Terapis">
+              <span class="option-label">Laporan Fee / Gaji Komisi Terapis</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q35_jenis_laporan" value="Laporan Perkembangan Anak">
+              <span class="option-label">Laporan Grafik Perkembangan Anak</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 36</div>
+          <div class="question-text">Apakah laporan perlu bisa difilter berdasarkan rentang tanggal/periode tertentu?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q36_filter_tanggal" value="Ya, filter fleksibel (Harian, Mingguan, Bulanan, Custom Tanggal)">
+              <span class="option-label">Ya, filter custom (Harian, Bulanan, Pertanggal)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q36_filter_tanggal" value="Cukup laporan bulanan">
+              <span class="option-label">Cukup rekap bulanan</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 37</div>
+          <div class="question-text">Apakah laporan perlu bisa didownload dalam format Excel / PDF?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q37_download_format" value="Ya, harus bisa export Excel (.xlsx) dan PDF">
+              <span class="option-label">Ya, bisa Export Excel & PDF</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q37_download_format" value="Cukup Excel saja">
+              <span class="option-label">Cukup Export Excel</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q37_download_format" value="Cukup lihat di layar monitor/HP">
+              <span class="option-label">Cukup lihat di layar</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 9: NOTIFIKASI -->
+      <section class="step-section" data-step="10">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-bell"></i> Bagian 9</div>
+          <h2 class="section-title">Notifikasi & Remind</h2>
+          <p class="section-desc">Pengingat otomatis untuk orang tua pasien.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 38</div>
+          <div class="question-text">Apakah sistem perlu memberikan pengingat otomatis kepada orang tua terkait:</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q38_pengingat_ortu" value="Pengingat Jadwal Terapi (H-1 / Jam)">
+              <span class="option-label">Pengingat Jadwal Terapi Besok (H-1)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q38_pengingat_ortu" value="Notifikasi Perubahan Jadwal / Reschedule">
+              <span class="option-label">Perubahan / Reschedule Jadwal</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q38_pengingat_ortu" value="Tagihan Pembayaran / Kwitansi">
+              <span class="option-label">Tagihan Pembayaran & Invoice</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q38_pengingat_ortu" value="Paket Sesi Hampir Habis (Sisa 1-2 Sesi)">
+              <span class="option-label">Paket Sesi Hampir Habis (Sisa 1-2 sesi)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q38_pengingat_ortu" value="Paket Terapi Akan Expired">
+              <span class="option-label">Paket Akan Expired / Kedaluwarsa</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 39</div>
+          <div class="question-text">Jika membutuhkan notifikasi, kanal apa yang ingin digunakan?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q39_kanal_notifikasi" value="WhatsApp Gateway (Paling Direkomendasikan)">
+              <span class="option-label">WhatsApp (Otomatis via WA Gateway)</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q39_kanal_notifikasi" value="Email Notification">
+              <span class="option-label">Email Notification</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q39_kanal_notifikasi" value="Notifikasi di dalam Web App / Sistem">
+              <span class="option-label">Cukup Notifikasi di web/sistem</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 10: DASHBOARD -->
+      <section class="step-section" data-step="11">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-gauge-high"></i> Bagian 10</div>
+          <h2 class="section-title">Dashboard Utama</h2>
+          <p class="section-desc">Ringkasan informasi saat pertama kali membuka aplikasi.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 40</div>
+          <div class="question-text">Informasi apa yang ingin langsung terlihat saat admin/owner membuka Dashboard?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="checkbox" name="q40_info_dashboard" value="Total Pasien Aktif">
+              <span class="option-label">Total Pasien Aktif</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q40_info_dashboard" value="Jadwal Terapi Hari Ini">
+              <span class="option-label">Jadwal Terapi Hari Ini</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q40_info_dashboard" value="Sesi Terapi Selesai Hari Ini">
+              <span class="option-label">Jumlah Terapi Selesai Hari Ini</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q40_info_dashboard" value="Terapis yang Bertugas Hari Ini">
+              <span class="option-label">Daftar Terapis yang Bertugas Hari Ini</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q40_info_dashboard" value="Total Pendapatan Hari Ini">
+              <span class="option-label">Total Pendapatan / Omset Hari Ini</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q40_info_dashboard" value="Daftar Paket Sesi yang Hampir Habis">
+              <span class="option-label">Peringatan Paket Sesi Hampir Habis</span>
+            </label>
+            <label class="option-chip">
+              <input type="checkbox" name="q40_info_dashboard" value="Pasien Baru Mendaftar">
+              <span class="option-label">Jumlah Pasien Baru Bulan Ini</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 11: TAMPILAN & HAL LAIN -->
+      <section class="step-section" data-step="12">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Bagian 11 & 12</div>
+          <h2 class="section-title">Desain & Alur Klinik</h2>
+          <p class="section-desc">Identitas visual, perangkat yang digunakan, serta alur operasional.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 41</div>
+          <div class="question-text">Apakah ada desain atau identitas visual khusus klinik Kakak?</div>
+          <textarea name="q41_identitas_visual" class="form-textarea" placeholder="Contoh: Logo klinik, warna branding (misal Biru Tosca + Kuning), style font khusus..."></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 42</div>
+          <div class="question-text">Perangkat apa yang paling sering digunakan untuk buka sistem?</div>
+          <div class="options-grid">
+            <label class="option-chip">
+              <input type="radio" name="q42_perangkat_akses" value="Wajib nyaman di Komputer/Laptop DAN Smartphone/Tablet">
+              <span class="option-label">Komputer / Laptop DAN HP / Tablet (Responsif)</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q42_perangkat_akses" value="Hanya di Komputer / Laptop Admin">
+              <span class="option-label">Utamanya Komputer / Laptop</span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="q42_perangkat_akses" value="Utamanya HP / Tablet Terapis">
+              <span class="option-label">Utamanya HP / Tablet</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 43</div>
+          <div class="question-text">Apakah ada proses administrasi lain yang saat ini manual & ingin dimasukkan ke sistem?</div>
+          <textarea name="q43_proses_manual_lain" class="form-textarea" placeholder="Contoh: Absensi terapis, rekap komisi bulanan, stok alkes/papan terapi..."></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 44</div>
+          <div class="question-text">Apakah saat ini sudah ada data lama (Excel/Aplikasi) yang ingin dimigrasikan ke sistem baru?</div>
+          <textarea name="q44_migrasi_data_lama" class="form-textarea" placeholder="Jelaskan jika ada file Excel data pasien/riwayat lama..."></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 45</div>
+          <div class="question-text">Fitur apa dari referensi yang ingin DIPERTAHANKAN, DITAMBAHKAN, atau DIHILANGKAN?</div>
+          <textarea name="q45_custom_fitur" class="form-textarea" placeholder="Tuliskan jika ada masukan khusus terkait fitur yang disukai atau tidak dibutuhkan..."></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="question-num">Pertanyaan 46</div>
+          <div class="question-text">Boleh tolong jelaskan ALUR PASIEN dari pertama datang sampai selesai terapi & bayar?</div>
+          <textarea name="q46_alur_pasien_lengkap" class="form-textarea" rows="4" placeholder="Contoh alur: Pasien daftar di FO -> Assessment oleh dokter -> Jadwalkan terapi -> Terapis melakukan terapi & isi SOAP -> Pembayaran di Kasir..."></textarea>
+        </div>
+      </section>
+
+    </form>
+
+    <!-- THANK YOU / SUCCESS SCREEN -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">
+        <i class="fa-solid fa-paper-plane"></i>
+      </div>
+      <h2 class="success-title">Terima Kasih Banyak Kak!</h2>
+      <p class="success-desc">
+        Data pendataan kebutuhan sistem klinik terapi anak berhasil terkirim. Notifikasi ringkasan jawaban telah dikirimkan ke <strong style="color:var(--pink-cyber)">kaishapuspito@gmail.com</strong>.
+      </p>
+      
+      <div class="summary-badge">
+        <i class="fa-solid fa-circle-check" style="color:var(--coral-red)"></i> Respon Kakak sangat membantu untuk perancangan sistem yang presisi!
+      </div>
+
+      <button type="button" class="btn btn-secondary" onclick="window.location.reload();">
+        <i class="fa-solid fa-rotate-left"></i> Isi Form Baru
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Bottom Navigation Buttons -->
+  <footer class="bottom-nav" id="bottomNav">
+    <button type="button" class="btn btn-secondary" id="prevBtn" disabled>
+      <i class="fa-solid fa-arrow-left"></i> Kembali
+    </button>
+
+    <button type="button" class="btn btn-primary" id="nextBtn">
+      Lanjut <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+    <button type="button" class="btn btn-success" id="submitBtn" style="display:none;">
+      Kirim Form <i class="fa-solid fa-paper-plane"></i>
+    </button>
+  </footer>
+
+  <!-- Settings Modal (Google Apps Script Endpoint Config) -->
+  <div class="modal-overlay" id="settingsModal">
+    <div class="modal-card">
+      <h3 style="font-family:var(--font-heading); color:#FFF; margin-bottom:12px;">
+        <i class="fa-solid fa-gear" style="color:var(--pink-cyber)"></i> Pengaturan Google Apps Script URL
+      </h3>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">
+        Jika Kakak sudah membuat Google Apps Script (Web App), tempel URL-nya di sini agar data dikirim langsung ke Google Sheets & Email <strong>kaishapuspito@gmail.com</strong>.
+      </p>
+      <div class="config-box">
+        <label for="gasUrlInput">URL Google Apps Script Web App:</label>
+        <input type="url" id="gasUrlInput" class="form-input" placeholder="https://script.google.com/macros/s/.../exec">
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn btn-secondary" id="closeSettingsBtn">Batal</button>
+        <button type="button" class="btn btn-primary" id="saveSettingsBtn">Simpan URL</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
