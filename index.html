@@ -53,7 +53,7 @@
       <!-- Generated dynamically by JS -->
     </div>
 
-    <form id="clinicSurveyForm" autocomplete="off">
+    <form id="clinicSurveyForm" novalidate autocomplete="off">
 
       <!-- STEP 0: DATA IDENTITAS RESPONDEN (Wajib Di Awal) -->
       <section class="step-section active" data-step="1">
@@ -1106,7 +1106,7 @@
       Lanjut <i class="fa-solid fa-arrow-right"></i>
     </button>
 
-    <button type="button" class="btn btn-success" id="submitBtn" style="display:none;">
+    <button type="submit" form="clinicSurveyForm" class="btn btn-success" id="submitBtn" style="display:none;">
       Kirim Form <i class="fa-solid fa-paper-plane"></i>
     </button>
   </footer>

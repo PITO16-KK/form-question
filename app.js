@@ -111,31 +111,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Validate Step 1 (Respondent data required)
   function validateCurrentStep() {
-    if (currentStep === 1) {
-      const nama = document.getElementById('nama_pengisi');
-      const klinik = document.getElementById('nama_klinik');
-      const wa = document.getElementById('nomor_wa');
-      const peran = form.querySelector('input[name="peran_responden"]:checked');
+    const nama = document.getElementById('nama_pengisi');
+    const klinik = document.getElementById('nama_klinik');
+    const wa = document.getElementById('nomor_wa');
+    const peran = form.querySelector('input[name="peran_responden"]:checked');
 
-      if (!nama.value.trim()) {
-        alert('Mohon isi Nama Lengkap Pengisi Form terlebih dahulu.');
-        nama.focus();
-        return false;
-      }
-      if (!klinik.value.trim()) {
-        alert('Mohon isi Nama Klinik / Tempat Terapi Kakak.');
-        klinik.focus();
-        return false;
-      }
-      if (!peran) {
-        alert('Mohon pilih Jabatan / Peran Kakak di Klinik.');
-        return false;
-      }
-      if (!wa.value.trim()) {
-        alert('Mohon isi Nomor WhatsApp / Email Konfirmasi.');
-        wa.focus();
-        return false;
-      }
+    if (!nama || !nama.value.trim()) {
+      alert('Mohon isi Nama Lengkap Pengisi Form terlebih dahulu di Langkah Identitas.');
+      goToStep(1);
+      if (nama) nama.focus();
+      return false;
+    }
+    if (!klinik || !klinik.value.trim()) {
+      alert('Mohon isi Nama Tempat Terapi / Klinik terlebih dahulu di Langkah Identitas.');
+      goToStep(1);
+      if (klinik) klinik.focus();
+      return false;
+    }
+    if (!peran) {
+      alert('Mohon pilih Jabatan / Peran di Klinik terlebih dahulu di Langkah Identitas.');
+      goToStep(1);
+      return false;
+    }
+    if (!wa || !wa.value.trim()) {
+      alert('Mohon isi Nomor WhatsApp / Email Konfirmasi terlebih dahulu di Langkah Identitas.');
+      goToStep(1);
+      if (wa) wa.focus();
+      return false;
     }
     return true;
   }
@@ -236,8 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Form Submit Handler
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  async function handleFormSubmit() {
     if (!validateCurrentStep()) return;
 
     submitBtn.disabled = true;
@@ -274,10 +275,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Send to Google Apps Script if URL configured
     if (gasUrl && gasUrl.startsWith('http')) {
       try {
-        const resp = await fetch(gasUrl, {
+        await fetch(gasUrl, {
           method: 'POST',
           mode: 'no-cors', // Standard Google Apps Script CORS bypass
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload)
         });
         submitSuccess = true;
@@ -286,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitSuccess = true; // Still proceed to show success screen
       }
     } else {
-      // Direct Webhook / Fallback mode
+      // Fallback mode
       submitSuccess = true;
     }
 
@@ -305,6 +306,17 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = false;
       submitBtn.innerHTML = `Kirim Form <i class="fa-solid fa-paper-plane"></i>`;
     }
+  }
+
+  // Bind Submit Events
+  submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    handleFormSubmit();
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleFormSubmit();
   });
 
   // Initial Setup Calls
